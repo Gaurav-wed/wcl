@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cp target/wcl.war /home/gaurav/Devops/apache-tomcat-9.0.88/webapps'
+                sh 'cp target/wcl.war /home/gaurav/Devops/apache-tomcat-9.0.89/webapps'
             }
         }	
 
