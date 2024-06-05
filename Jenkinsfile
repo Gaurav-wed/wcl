@@ -21,14 +21,14 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh '''echo "Deployed to  Dev"
-elif  [ $ENV == "DEV" ];then
+                sh '''if  [ $ENV == "DEV" ];then
+echo "Deployed to  Dev"
 cp target/wcl.war /home/gaurav/Devops/apache-tomcat-9.0.89/webapps
-echo "Deployed to  Qa"
 elif  [ $ENV == "QA" ];then
+echo "Deployed to  Qa"
 cp target/wcl.war /home/gaurav/Devops/apache-tomcat-9.0.89/webapps
-echo "Deployed to  Uat"
 elif  [ $ENV == "UAT" ];then
+echo "Deployed to  Uat"
 cp target/wcl.war /home/gaurav/Devops/apache-tomcat-9.0.89/webapps
 fi'''
             }
